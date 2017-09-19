@@ -28,4 +28,20 @@ if SERVER then
 	function csm.gmod_cameraprop:getKey()
 		return self:GetKey()
 	end
+	
+	function csm.gmod_thruster:getOn()
+		return self:GetNWBool("On")
+	end
+	
+	function csm.gmod_thruster:getEffect()
+		return self:GetNWString("Effect")
+	end
+	
+	function csm.gmod_thruster:getSound()
+		return self.SoundName
+	end
+	
+	function csm.gmod_thruster:isToggle()
+		return self.Toggle
+	end
 end
