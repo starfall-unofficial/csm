@@ -46,3 +46,21 @@ else
 		end
 	end
 end
+
+function csm.expadv_gate:getState()
+	local state = self:GetExpVar("FLOAT", 4)
+	
+	if state == -1 then
+		return "Compile"
+	elseif state == 0 then
+		return "Offline"
+	elseif state == 1 then
+		return "Online"
+	elseif state == 2 then
+		return "Alert"
+	elseif state == 3 then
+		return "Crashed"
+	elseif state == 4 then
+		return "Burned"
+	end
+end
