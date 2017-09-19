@@ -3,11 +3,11 @@ local csm = SF.csm
 if SERVER then
 
 	function csm.gmod_wire_expression2:getName()
-		if self.GetGateName then
-			return self:GetGateName() or ""
-		end
-		
-		return ""
+		return self:GetGateName()
+	end
+	
+	function csm.gmod_wire_expression2:isErrored()
+		return self.error
 	end
 
 	function csm.gmod_wire_expression2:getCpuUsage()
