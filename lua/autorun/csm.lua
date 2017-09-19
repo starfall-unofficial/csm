@@ -4,6 +4,15 @@
 -- end
 
 timer.Simple(0, function()
+	local eunwrap = SF.Entities.Unwrap
+
+	function unwrapEnt(e)
+		local e = eunwrap(e)
+		if IsValid(e) then return e end
+		SF.Throw("Entity is not valid.", 2)
+	end
+
+
 	SF.csm = {}
 	local csm = SF.csm
 
@@ -18,7 +27,9 @@ timer.Simple(0, function()
 						methods[class] = {}
 					end
 					
-					methods[class][name] = fn
+					methods[class][name] = function(self, ...)
+						return fn(unwrapEnt(self), ...)
+					end
 				end,
 			})
 		end,
@@ -45,7 +56,11 @@ timer.Simple(0, function()
 		end
 	end
 
+	AddCSLuaFile("csm/gmod.lua")
+	include("csm/gmod.lua")
 	
 	AddCSLuaFile("csm/wire.lua")
 	include("csm/wire.lua")
+	
+	
 end)
