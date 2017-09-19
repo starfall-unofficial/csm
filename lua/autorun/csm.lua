@@ -62,5 +62,7 @@ timer.Simple(0, function()
 	AddCSLuaFile("csm/wire.lua")
 	include("csm/wire.lua")
 	
+	AddCSLuaFile("csm/misc.lua")
+	include("csm/misc.lua")
 	
 end)
