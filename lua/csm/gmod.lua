@@ -16,4 +16,16 @@ if SERVER then
 	function csm.gmod_button:getKey()
 		return self:GetKey()
 	end
+	
+	function csm.gmod_cameraprop:getVecTrack()
+		return SF.Vectors.Wrap(self:GetvecTrack())
+	end
+	
+	function csm.gmod_cameraprop:getEntTrack()
+		return SF.Entities.Wrap(self:GetentTrack())
+	end
+	
+	function csm.gmod_cameraprop:getKey()
+		return self:GetKey()
+	end
 end
