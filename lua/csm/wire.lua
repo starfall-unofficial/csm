@@ -35,6 +35,7 @@ if SERVER then
 		return self:GetOn()
 	end
 
+	csm.gmod_button = getOn -- not really wire
 	csm.gmod_wire_button = getOn
 	csm.gmod_wire_dynamic_button = getOn
 
