@@ -1,7 +1,12 @@
 local csm = SF.csm
 
-if SERVER then
 
+function csm.gmod_wire_expression2:getName()
+	return self:GetNWString("name", "generic")
+end
+
+
+if SERVER then
 	function csm.gmod_wire_expression2:getName()
 		return self:GetGateName()
 	end
@@ -22,5 +27,4 @@ if SERVER then
 
 	csm.gmod_wire_button = getOn
 	csm.gmod_wire_dynamic_button = getOn
-
 end
