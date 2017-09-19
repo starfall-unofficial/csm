@@ -4,6 +4,8 @@
 -- end
 
 timer.Simple(0, function()
+	SF.DefaultEnvironment._CSM = true
+
 	local eunwrap = SF.Entities.Unwrap
 
 	function unwrapEnt(e)
