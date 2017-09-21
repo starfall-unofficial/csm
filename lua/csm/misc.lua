@@ -9,10 +9,6 @@ function csm.starfall_processor:quotaAverage()
 	return self.instance.cpu_average
 end
 
-function csm.starfall_processor:quotaAverage()
-	return self.instance.cpu_average
-end
-
 function csm.starfall_processor:quotaMax()
 	return self.instance.cpuQuota
 end
