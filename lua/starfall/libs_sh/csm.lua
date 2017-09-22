@@ -30,7 +30,11 @@ SF.Libraries.AddHook("postload", function(instance)
 					end
 					
 					methods[class][name] = function(self, ...)
-						return fn(unwrapEnt(self), ...)
+						local e = unwrapEnt(self)
+						if e:GetClass() ~= class then
+							SF.Throw("Invalid Class.", 2)
+						end
+						return fn(e, ...)
 					end
 				end,
 			})
