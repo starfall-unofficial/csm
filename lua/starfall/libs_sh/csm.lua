@@ -3,9 +3,9 @@
 --     ...
 -- end
 
-timer.Simple(0, function()
-	SF.DefaultEnvironment._CSM = true
+SF.DefaultEnvironment._CSM = true
 
+SF.Libraries.AddHook("postload", function(instance)
 	local eunwrap = SF.Entities.Unwrap
 
 	function unwrapEnt(e)
@@ -60,11 +60,11 @@ timer.Simple(0, function()
 
 	AddCSLuaFile("csm/gmod.lua")
 	include("csm/gmod.lua")
-	
+
 	AddCSLuaFile("csm/wire.lua")
 	include("csm/wire.lua")
-	
+
 	AddCSLuaFile("csm/misc.lua")
 	include("csm/misc.lua")
-	
+
 end)
