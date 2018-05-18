@@ -5,7 +5,7 @@
 
 SF.DefaultEnvironment._CSM = true
 
-SF.Libraries.AddHook("postload", function(instance)
+SF.AddHook("postload", function(instance)
 	local eunwrap = SF.Entities.Unwrap
 
 	function unwrapEnt(e)
